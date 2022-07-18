@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --main: rgb(255, 255, 255);
+    --accent: rgb(255, 166, 0);
+    --dark: rgb(33, 33, 33);
+}
+
+body {
+    height: 100vh;
+    color: var(--accent);
+}
+
+h1 {
+    color: var(--accent);
+    padding-left: 12px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    border-bottom: 4px solid var(--accent);
+    box-shadow: 0px 4px 20px -4px var(--accent);
+    padding: 20px;
+    background-color: var(--dark);
+}
+
+.logo-icon {
+    fill: var(--accent);
+}
+
+main {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.add-book {
+    margin-bottom: 20px;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.396);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transform: scale(0);
+    pointer-events: none;
+}
+
+.overlay.active {
+    transform: scale(1);
+    pointer-events: all;
+}
+
+.modal-box {
+    max-width: 350px;
+    text-align: center;
+    margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: var(--dark);
+    border: 2px solid var(--accent);
+    border-radius: 20px;
+    padding: 20px;
+    transition: 300ms ease-in-out;
+    z-index: 1;
+}
+.modal-box.active {
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: all;
+}
+
+.modal-box__inputs {
+    padding-bottom: 20px;
+    padding-top: 12px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+input {
+    width: 90%;
+    margin: 8px auto;
+    padding: 4px 8px;
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    background-color: rgb(237, 237, 237);
+}
+
+input:focus {
+    outline: 2px solid var(--accent);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+label {
+    font-weight: bold;
+    line-height: 1.1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    background-color: var(--main);
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 16px;
+    height: 20px;
+    border: 2px solid var(--accent);
+    border-radius: 4px;
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--accent);
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+button {
+    padding: 12px 24px;
+    background-color: var(--accent);
+    color: var(--main);
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+/* book box */
+
+.books {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 50px;
+}
+
+.box {
+    width: 350px;
+    text-align: center;
+    background-color: var(--dark);
+    border: 2px solid var(--accent);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.box p {
+    padding: 8px;
+    font-size: 24px;
+}
+
+.box button {
+    display: block;
+    margin: 20px 0;
+    width: 100%;
+    border: 3px solid var(--main);
+}
+
+button.read {
+    background-color: var(--main);
+    color: var(--accent);
+    border: 3px solid var(--accent);
+}

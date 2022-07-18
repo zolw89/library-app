@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="logo"><svg class='logo-icon' xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M11 44q-1.2 0-2.1-.9Q8 42.2 8 41V7q0-1.2.9-2.1Q9.8 4 11 4h26q1.2 0 2.1.9.9.9.9 2.1v34q0 1.2-.9 2.1-.9.9-2.1.9Zm0-3h26V7h-3v13.3l-4.85-2.8-4.85 2.8V7H11v34Zm0 0V7v34Zm13.3-20.7 4.85-2.8L34 20.3l-4.85-2.8-4.85 2.8Z"/></svg></div>
+            <h1>Library App</h1>
+        </div>
+    </header>
+    <main>
+        <div class="modal">
+            <button data-modal-target="#modal" class="add-book">+ Add book</button>
+            <div class="modal-box"  id="modal">
+                <h3>Add new book</h3>
+                <form action="">
+                    <div class="modal-box__inputs">
+                        <input type="text" class="input" id="title" placeholder="Title" required>
+                        <input type="text" class="input" id="author" placeholder="Author" required>
+                        <input type="number" class="input" pattern="[0-10000]" name="pages" id="pages" placeholder="Pages" required>
+                        <label>Have you read it?<input type="checkbox" name="isRead" id="isRead"></label>
+                    </div>
+                    <button type="submit" id="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="overlay" id="overlay"></div>
+
+        <h2>Your books</h2>
+        <div class="books">
+            
+        </div>
+    </main>
+    <footer>
+    </footer>
+    
+    <script src="app.js"></script>
+</body>
+</html>
